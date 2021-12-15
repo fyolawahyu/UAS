@@ -23,14 +23,30 @@ print(df)
 
 st.title('Data Produksi Minyak Mentah')
 st.header('UAS Pemrograman Komputer')
+ch_ = csvHandler('produksi_minyak_mentah.csv')
+jh_ = jsonHandler('kode_negara_lengkap.json')
+
+#--Poin (a)--
+df_ = ch_.dataFrame
+df_info = jh_.dataFrame
+negara_li = df_info['name'].tolist()
+
+negara = st.selectbox('Pilih negara : ',negara_li) 
+
+
+kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
+
+
+st.write('Kode negara : ',kode)
+st.write('Negara : ',negara)
 
 # Mengubah string menjadi float pada data produksi
 df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
 df['produksi'] = df['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
 df['produksi'] = pd.to_numeric(df['produksi'], errors='coerce')
 
-df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
-df2=df2.loc[df2['kode_negara']=='AUS']
+df2 = pd.DataFrame(df,columns= ['negara','tahun','produksi'])
+df2=df2.loc[df2['negara']]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
 st.write(df2)
