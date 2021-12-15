@@ -29,7 +29,7 @@ df_ = ch_.dataFrame
 df_info = jh_.dataFrame
 negara_li = df_info['name'].tolist()
 
-negara = st.selectbox('Pilih negara : ',negara_li) 
+negara = st.sitebar.selectbox('Pilih negara : ',negara_li) 
 
 
 kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
@@ -40,8 +40,8 @@ kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
 st.sidebar.title("Pengaturan")
 left_col, mid_col, right_col = st.columns(3)
 
-st.sidebar.write('Kode negara : ',kode)
-st.sidebar.write('Negara : ',negara)
+st.write('Kode negara : ',kode)
+st.write('Negara : ',negara)
 
 # Mengubah string menjadi float pada data produksi
 df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
