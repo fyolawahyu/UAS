@@ -67,9 +67,9 @@ tahun = st.sidebar.number_input("Tahun produksi", min_value=1971, max_value=2015
 
 dfb = csv_.loc[csv_['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
-dfB = dfB[:n]
+dfb = dfb[:n]
 
-dfB.plot.bar('kode negara',produksi)
+dfb.plot.bar('kode negara',produksi)
 plt.show
 left_col.pyplot(fig)
 
