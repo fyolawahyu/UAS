@@ -69,6 +69,6 @@ dfb = df.loc[df['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfb = dfb[:n]
 
-dfb.plot.bar(x='kode_negara', y='produksi')
+fig.plot.bar(x='kode_negara', y='produksi')
 plt.show()
 right_col.pyplot(fig)
