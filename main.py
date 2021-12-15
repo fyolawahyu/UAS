@@ -69,7 +69,8 @@ dfb = csv_.loc[csv_['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfb = dfb[:n]
 
-dfb.plot.bar(x='kode_negara',y='produksi')
-plt.show
-left_col.pyplot(dfb)
+fig, ax = plt.subplots()
+ax.bar(kode_negara, produksi, color=colors)
+plt.tight_layout()
 
+right_col.pyplot(fig)
