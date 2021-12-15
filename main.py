@@ -14,10 +14,14 @@ with open("kode_negara_lengkap.json", "r") as read_file:
 print(data[0])
 dfJ = pd.DataFrame(data)
 
+
 #READ DATA CSV
 csv = pd.read_csv("produksi_minyak_mentah.csv")
 df = pd.DataFrame(csv)
 print(df)
+
+st.title('Data Produksi Minyak Mentah')
+st.header('UAS Pemrograman Komputer')
 
 # Mengubah string menjadi float pada data produksi
 df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
@@ -35,3 +39,5 @@ ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
 plt.show
+
+st.writedf2)
