@@ -39,8 +39,8 @@ kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
 
 
 
-left_col.write('Kode negara : ',kode)
-left_col.write('Negara : ',negara)
+st.sidebar.write('Kode negara : ',kode)
+st.sidebarwrite('Negara : ',negara)
 
 # Mengubah string menjadi float pada data produksi
 df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
