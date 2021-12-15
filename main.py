@@ -26,6 +26,8 @@ st.header('UAS Pemrograman Komputer')
 ch_ = csvHandler('produksi_minyak_mentah.csv')
 jh_ = jsonHandler('kode_negara_lengkap.json')
 
+st.sidebar.title("Pengaturan")
+left_col, mid_col, right_col = st.columns(3)
 
 # Mengubah string menjadi float pada data produksi
 df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
@@ -45,5 +47,5 @@ ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
 plt.show
-right_col.pyplot(fig)
+
 
