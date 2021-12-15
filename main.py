@@ -30,13 +30,14 @@ df_info = jh_.dataFrame
 negara_li = df_info['name'].tolist()
 
 st.sidebar.title("Pengaturan")
+left_col, mid_col, right_col = st.columns(3)
 negara = st.sidebar.selectbox('Pilih negara : ',negara_li) 
 
 
 kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
 
 
-left_col, mid_col, right_col = st.columns(3)
+
 
 left_col.write('Kode negara : ',kode)
 left_col.write('Negara : ',negara)
