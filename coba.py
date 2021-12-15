@@ -29,3 +29,11 @@ df2=df2.loc[df2['tahun']==1971]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
 st.write(df2)
+
+fig, ax = plt.subplots()
+ax.plot(df['tahun'], df['produksi'], label = df['tahun'])
+ax.set_title("T")
+ax.set_xlabel("Tahun", fontsize = 12)
+ax.set_ylabel("Jumlah Produksi", fontsize = 12)
+ax.legend(fontsize = 7.8)
+plt.show
