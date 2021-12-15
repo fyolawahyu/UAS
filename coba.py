@@ -33,7 +33,7 @@ df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 st.write(df2)
 
 fig, ax = plt.subplots()
-ax.plot(df2['tahun'], df['produksi'], label = df['tahun'])
+ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
 ax.set_title("T")
 ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
