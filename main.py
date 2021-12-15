@@ -29,7 +29,7 @@ df_ = ch_.dataFrame
 df_info = jh_.dataFrame
 negara_li = df_info['name'].tolist()
 
-negara = st.sitebar.selectbox('Pilih negara : ',negara_li) 
+negara = st.sidebar.selectbox('Pilih negara : ',negara_li) 
 
 
 kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
