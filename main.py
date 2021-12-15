@@ -1,19 +1,23 @@
-import streamlit as st
-import numpy as np
-import pandas as pd
+#IMPORT AWAL
 import json
+import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import cm
+from matplotlib import cm 
+import streamlit as st
 
-st.title('oke')
+#READ DATA JSON
+with open("kode_negara_lengkap.json", "r") as read_file:
+    data = json.load(read_file)
+# for i in data:
+#     print(type(i))
+print(data[0])
+dfJ = pd.DataFrame(data)
 
-# Read Data Json
-with open ("kode_negara_lengkap.json") as f:
-    kode_negara = json.load(f)
-
-# Read Data CSV dan ubah ke data frame
+#READ DATA CSV
 csv = pd.read_csv("produksi_minyak_mentah.csv")
 df = pd.DataFrame(csv)
+print(df)
 
 # Mengubah string menjadi float pada data produksi
 df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
@@ -24,18 +28,10 @@ df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['kode_negara']=='AUS']
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
-st.write(df2)
-
-df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
-df2=df2.loc[df2['tahun']==1971]
-df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
-
-st.write(df2)
-
 fig, ax = plt.subplots()
 ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
-ax.set_title("T")
+ax.set_title("Jumlah produksi per bulan")
 ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
-ax.legend(fontsize = 7.8)
+ax.legend(fontsize = 2)
 plt.show
