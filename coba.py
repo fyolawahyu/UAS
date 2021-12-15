@@ -38,4 +38,5 @@ ax.set_title("T")
 ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 7.8)
+pyplot.savefig
 plt.show
