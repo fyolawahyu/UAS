@@ -62,8 +62,8 @@ plt.show
 mid_col.pyplot(fig)
 
 #--b--
-tahun = int(input("Pilih Tahun : "))
-n = ("Pilih Banyak Negara : ")
+tahun = st.sidebar.selectbox("Pilih Tahun : "))
+n = st.sidebar.selectbox("Pilih Banyak Negara : ")
 
 dfb = csv_.loc[csv_['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
