@@ -65,10 +65,10 @@ mid_col.pyplot(fig)
 n = st.sidebar.number_input("Berapa besar negara?", min_value=1, max_value=None)
 tahun = st.sidebar.number_input("Tahun produksi", min_value=1971, max_value=2015)
 
-dfb = csv_.loc[csv_['tahun'] == tahun][:n]
+dfb = df.loc[df['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfb = dfb[:n]
 
 dfb.plot.bar(x='kode_negara', y='produksi')
 plt.show()
-st.pyplot(dfb)
+right.pyplot(dfb)
