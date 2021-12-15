@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm 
 import streamlit as st
-from fileHandler import csvHandler,jsonHandler
+from f_handler import csv_,json_
 
 #READ DATA JSON
 with open("kode_negara_lengkap.json", "r") as read_file:
@@ -23,8 +23,8 @@ print(df)
 
 st.title('Data Produksi Minyak Mentah')
 st.header('UAS Pemrograman Komputer')
-ch_ = csvHandler('produksi_minyak_mentah.csv')
-jh_ = jsonHandler('kode_negara_lengkap.json')
+ch_ = csv_('produksi_minyak_mentah.csv')
+jh_ = json_('kode_negara_lengkap.json')
 df_ = ch_.dataFrame
 df_info = jh_.dataFrame
 negara_li = df_info['name'].tolist()
