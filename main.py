@@ -40,6 +40,7 @@ df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
 st.write(df2)
 
+'''
 fig, ax = plt.subplots()
 ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
 ax.set_title("Jumlah produksi per bulan")
@@ -48,4 +49,13 @@ ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
 plt.show
 right_col.pyplot(fig)
+'''
 
+fig, ax = plt.subplots()
+ax.bar(df2['tahun'], df2['produksi'], color=colors)
+ax.set_xticklabels(df2['tahun'], rotation=45)
+ax.set_xlabel("Tahun", fontsize = 12)
+ax.set_ylabel("Jumlah Produksi", fontsize = 12)
+plt.tight_layout()
+
+right_col.pyplot(fig)
