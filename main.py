@@ -137,7 +137,7 @@ left_col.write(nama_negara)
 left_col.write(region_negara)
 left_col.write(subregion_negara)
 
-
+'''
 #bagian 2
 dfterkecil = dfb[dfb.produksi !=0]
 dfterkecil = dfterkecil.sort_values(by=['produksi'],ascending=True]
@@ -180,7 +180,7 @@ st.write(kode_negara)
 st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
-
+'''
 #d bagian 3
 dfproduksinol = dfb[dfb.produksi == 0]
 listnegaranol = []
