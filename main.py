@@ -99,8 +99,8 @@ plt.show()
 st.pyplot(plt)
 
 #--d--
-jumlah_produksi = dfb[:1].iloc[0]['produksi']
-kode_negara = dfb[:1].iloc[0]['kode_negara']
+jumlah_produksi = df2[:1].iloc[0]['produksi']
+kode_negara = df2[:1].iloc[0]['kode_negara']
 nama_negara = ""
 region_negara = ""
 subregion_negara = ""
