@@ -232,6 +232,6 @@ dfproduksikumulatifnol['region'] = listregionkumulatifnol
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol   
 
 col_1, col_2= st.columns(2)                                                        
-st.write(dfproduksinol)
-st.write(dfproduksikumulatifnol)
+col_1.write(dfproduksinol)
+col_2.write(dfproduksikumulatifnol)
 
