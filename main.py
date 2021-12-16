@@ -74,7 +74,14 @@ for i in range(len(list(df_csv['kode_negara']))):
     if kodenegarahuruf == list(df_csv['kode_negara'])[i]:
         list_produksi.append(list(df_csv['produksi'])[i])
         list_tahun.append(list(df_csv['tahun'])[i])
-        
+
+#OUTPUT TABEL A
+df2 = pd.DataFrame(df_csv,columns= ['kode_negara','tahun','produksi'])
+df2=df2.loc[df2['kode_negara']==kode]
+df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
+
+st.write(df2)
+
 #OUTPUT GRAFIK A
 fig, ax = plt.subplots()
 ax.plot(list_tahun, list_produksi)
