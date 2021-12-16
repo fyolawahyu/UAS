@@ -18,7 +18,6 @@ df_info = pd.DataFrame(data)
 #READ DATA CSV
 csv = pd.read_csv("produksi_minyak_mentah.csv")
 csv_ = pd.DataFrame(csv)
-print(df)
 
 #MEMBUAT DATA FRAME TIAP FILE
 st.title('Data Produksi Minyak Mentah')
