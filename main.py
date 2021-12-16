@@ -68,13 +68,11 @@ st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
 tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 
-df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
-df2=df2.loc[df2['tahun']==tahun]
-df2 = df2.sort_values(by=['produksi'], ascending = False)
-df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
-df2 = df2[:n]
+dfb = df.loc[df['tahun'] == tahun][:n]
+dfb = dfb.sort_values(by='produksi', ascending = False)
+dfb = dfb[:n]
 
-df2.plot.bar(x='kode_negara', y='produksi')
+dfb.plot.bar(x='kode_negara', y='produksi')
 plt.show()
 st.pyplot(plt)
 
@@ -99,8 +97,8 @@ plt.show()
 st.pyplot(plt)
 
 #--d--
-jumlah_produksi = df2[:1].iloc[0]['produksi']
-kode_negara = df2[:1].iloc[0]['kode_negara']
+jumlah_produksi = dfb[:1].iloc[0]['produksi']
+kode_negara = dfb[:1].iloc[0]['kode_negara']
 nama_negara = ""
 region_negara = ""
 subregion_negara = ""
