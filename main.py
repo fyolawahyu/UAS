@@ -70,9 +70,9 @@ n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 
 dfb = df.loc[df['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
-dfb = dfb[:n]
+df3 = dfb[:n]
 
-dfb.plot.bar(x='kode_negara', y='produksi')
+df3.plot.bar(x='kode_negara', y='produksi')
 plt.show()
 st.pyplot(plt)
 
