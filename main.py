@@ -102,9 +102,10 @@ for i in list_a :
     
 dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
-dk = dk[:n]
-st.write(dk)
-dk.plot.bar(x='kode_negara', y='kumulatif') 
+dk1 = dk[:n]
+
+st.write(dk1)
+dk1.plot.bar(x='kode_negara', y='kumulatif') 
 plt.show()
 st.pyplot(plt)
 
@@ -185,14 +186,14 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
 
-'''
+
 st.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
 st.write(jumlah_produksi)
 st.write(kode_negara)
 st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
-'''   
+ 
 
 #d bagian 3
 dfproduksinol = dfb[dfb.produksi == 0]
