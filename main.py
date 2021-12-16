@@ -75,3 +75,23 @@ dfb = dfb[:n]
 dfb.plot.bar(x='kode_negara', y='produksi')
 plt.show()
 st.pyplot(plt)
+
+#--c--
+list_a = []
+kumulatif = []
+
+for i in list (csv_['kode_negara']) :
+    if i not in list_a.append(i)
+        list_a.append(i)
+        
+for i in list_a :
+    a=csv_.loc[csv_['kode_negara'] ==i,'produksi'].sum()
+    kumulatif.append(a)
+    
+dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
+dk = dk.sort_values(by=['kumulatif'], ascending = False)
+dk = dk[:n]
+
+dk.plot.bar(x='kode_negara', y='kumulatif') 
+plt.show()
+st.pyplot(plt)
