@@ -1,90 +1,4 @@
-import streamlit as st
-import numpy as np
-import pandas as pd
-import json
-import matplotlib.pyplot as plt
-from matplotlib import cm, colors
-
-##### Tittle
-st.set_page_config(layout="wide")  # this needs to be the first Streamlit command called
-st.title("Statistik Produksi Minyak Mentah Berbagai Negara")
-st.markdown("**")
-
-##### Sidebar
-st.sidebar.title("Pengaturan")
-left_col, mid_col, right_col = st.columns(3)
-
-##### Read Data CSV dan ubah ke data frame
-csv = pd.read_csv("produksi_minyak_mentah.csv")
-df = pd.DataFrame(csv)
-
-##### Mengubah string menjadi float pada data produksi
-#df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
-#df['produksi'] = df['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
-#df['produksi'] = pd.to_numeric(df['produksi'], errors='coerce')
-
-kode_csv = list(df['kode_negara'].unique())
-#print(f"kode_negara: {kode_csv}")
-total_produksi = []
-for c in kode_csv:
-    produksi = df[df['produksi']==c]['produksi'].astype(float)
-    total_produksi.append(produksi.sum())
-#print(f"Total produksi: {total_produksi}")
-
-##### Read Data Json
-with open ("kode_negara_lengkap.json") as f:
-    file_json = json.load(f)
-df2 = pd.DataFrame(file_json)
-
-#kode_json = list(map(lambda kode_json: kode_json['alpha-3'], file_json))
-kode_json = df2['alpha-3'].tolist()
-#print(kode_json)
-
-#nama_negara = list(map(lambda nama_negara: nama_negara['name'], file_json))
-nama_negara = df2['name'].tolist()
-#print(nama_negara)
-
-##### User inputs on the control panel
-st.sidebar.subheader("Pengaturan konfigurasi tampilan")
-list_kode=[]
-for k in kode_csv:
-    if k not in kode_json:
-        continue
-    list_kode.append(k)
-#print(list_kode)
-
-list_negara=[]
-for i in file_json:
-    if i['alpha-3'] not in list_kode:
-        continue
-    list_negara.append(i['name'])
-#print(list_negara)
-negara = st.sidebar.selectbox("Pilih Negara", list_negara)
-kode = df2[df2['name']==negara]['alpha-3'].tolist()[0]
-n_tampil = st.sidebar.number_input("Jumlah baris dalam tabel yang ditampilkan", min_value=1, max_value=None, value=10)
-
-list_tahun = list(df['tahun'].unique())
-tahun = st.sidebar.selectbox("Pilih Tahun", list_tahun)
-
-
-# A
-left_col.subheader("Tabel representasi data")
-
-dfA = pd.DataFrame(df, columns=['kode_negara', 'tahun', 'produksi'])
-dfA = dfA.loc[dfA['kode_negara']==kode]
-dfA['produksi'] = pd.to_numeric(dfA['produksi'], errors='coerce')
-
-fig, ax = plt.subplots()
-ax.plot(dfA['tahun'], dfA['produksi'], label = negara)
-ax.set_title("Jumlah Produksi Per Tahun")
-ax.set_xlabel("Tahun", fontsize = 9)
-ax.set_ylabel("Jumlah Produksi", fontsize = 9)
-ax.legend(fontsize = 9)
-st.pyplot(fig)
-
-left_col.dataframe(dfA.head(n_tampil))
-
-'''#IMPORT AWAL
+#IMPORT AWAL
 import json
 import pandas as pd
 import numpy as np
@@ -266,7 +180,7 @@ st.write(kode_negara)
 st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
-'''
+
 #d bagian 3
 dfproduksinol = dfb[dfb.produksi == 0]
 listnegaranol = []
