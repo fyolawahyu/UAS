@@ -70,7 +70,5 @@ dfb = dfb.sort_values(by='produksi', ascending = False)
 dfb = dfb[:n]
 
 dfb.plot.bar(x='kode_negara', y='produksi')
-plt.set_xlabel("Negara", fontsize=12)
-plt.set_ylabel("Jumlah Produksi", fontsize=12)
 plt.show()
 left_col.pyplot(plt)
