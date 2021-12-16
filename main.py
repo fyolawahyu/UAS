@@ -74,6 +74,7 @@ plt.show()
 st.pyplot(fig)
 
 #--b--
+st.write('Grafik Negara dengan Produksi Terbesar', font = 30)
 st.sidebar.header('Pengaturan Negara dengan Data Produksi Terbesar')
 tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
@@ -81,21 +82,13 @@ n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfbaru = dfb[:n]
-'''
 
 dfbaru.plot.bar(x='kode_negara', y='produksi')
 plt.show()
-'''
-
-dfbaru, ax = plt.subplots()
-plt.bar(produksi, kode_negara, color='red')
-plt.set_xticklabels(produksi, rotation=45)
-plt.set_xlabel("Kode Negara", fontsize=12)
-plt.set_ylabel("Total Produksi", fontsize=12)
-plt.tight_layout()
 st.pyplot(plt)
 
 #--c--
+st.write('Grafik Negara dengan Produksi Kumulatif Terbesar', font = 30)
 list_a = []
 kumulatif = []
 
