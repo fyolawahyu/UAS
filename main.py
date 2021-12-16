@@ -248,7 +248,7 @@ for i in range(len(dk)) :
             list_regionnegara.append(list(df_info['region'])[j])
             list_subregionnegara.append(list(df_info['sub-region'])[j])
 
-dk = pd.DataFrame(list(zip(list_kodenegara, list_namanegara, list_jumlahkumulatif, list_regionnegara, list_subregionnegara)), columns=['kode_negara', 'nama_negara', 'jumlah_kumulatif', 'region', 'sub-region'])
+dk = pd.DataFrame(list(zip(list_kodenegara, list_namanegara, list_jumlahkumulatif, list_regionnegara, list_subregionnegara)), columns=['kode_negara', 'nama_negara', 'kumulatif', 'region', 'sub-region'])
 
 T2 = st.selectbox("Tahun", tahun)
 
