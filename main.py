@@ -56,6 +56,7 @@ for i in range(len(list_kodenegarahuruf)):
 df_negara = pd.DataFrame(list(zip(list_nama, list_kodenegarahuruf, list_kodenegaraangka, list_region, list_subregion)), columns=[
                          'Negara', 'alpha-3', 'Kode_Negara', 'Region', 'Sub-Region'])
 
+N = st.sidebar.selectbox('Pilih negara : ',list_nama)
 for i in range(len(list_nama)):
     if list_nama[i] == N:
         kodenegarahuruf = list_kodenegarahuruf[i]
