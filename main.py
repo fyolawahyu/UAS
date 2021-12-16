@@ -54,7 +54,7 @@ st.write(df2)
 #OUTPUT GRAFIK A
 fig, ax = plt.subplots()
 ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'])
-ax.set_title("Jumlah Produksi Per Tahun di Negara", negara)
+ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
 ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
@@ -62,7 +62,7 @@ plt.show()
 st.pyplot(fig)
 
 #--b--
-n = st.sidebar.number_input("Berapa besar negara?", min_value=1, max_value=None)
+n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 tahun = st.sidebar.number_input("Tahun produksi", min_value=1971, max_value=2015)
 
 dfb = df.loc[df['tahun'] == tahun][:n]
