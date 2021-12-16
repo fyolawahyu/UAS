@@ -107,7 +107,7 @@ dk = dk[:n]
 dk.plot.bar(x='kode_negara', y='kumulatif') 
 plt.show()
 st.pyplot(plt)
-'''
+
 #--d--
 #bagian 1
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
@@ -148,7 +148,7 @@ left_col.write(nama_negara)
 left_col.write(region_negara)
 left_col.write(subregion_negara)
 
-
+'''
 #bagian 2
 dfterkecil = dfb[dfb.produksi !=0]
 dfterkecil = dfterkecil.sort_values(by=['produksi'],ascending=True]
