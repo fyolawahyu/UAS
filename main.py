@@ -21,7 +21,7 @@ df = pd.DataFrame(csv)
 print(df)
 
 #MEMBUAT DATA FRAME TIAP FILE
-mid_col.title('Data Produksi Minyak Mentah')
+st.title('Data Produksi Minyak Mentah')
 mid_col.header('UAS Pemrograman Komputer')
 ch_ = csv_('produksi_minyak_mentah.csv')
 jh_ = json_('kode_negara_lengkap.json')
