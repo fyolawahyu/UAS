@@ -96,7 +96,7 @@ tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_valu
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 
 dfb = df_scv.loc[df_scv['tahun'] == tahun [:n]
-dfb == dfb.sort_values(by='produksi', ascending = False)
+dfb = dfb.sort_values(by=['produksi'], ascending = False)
 df3 = dfb[:n]
 
 list_nama_df2 = []
