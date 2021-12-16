@@ -210,14 +210,14 @@ dfproduksinol['region'] = listregionol
 dfproduksinol['sub-region'] = listsubregionol
  
                                                         
-dfproduksinolkumulatifnol = dfb[dfb.produksi == 0]
+dfproduksikumulatifnol = dfb[dfb.produksi == 0]
 listnegarakumulatifnol = []
 listregionkumulatifnol = []
 listsubregionkumulatifnol = []
 
 for i in range(len(dfproduksikumulatifnol)):
     for j in range(len(df_info)):
-        if list (dfproduksikumulatifnolb['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
+        if list (dfproduksikumulatifnol['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
             listnegarankumulatifnol.append(list(df_info['name'])[j])
             listregionalkumulatifnol.append(list(df_info['region'])[j])
             listsubregionkumulatifnol.append(list(df_info['sub-region'])[j])
