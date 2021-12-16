@@ -63,7 +63,7 @@ plt.show()
 st.pyplot(fig)
 
 #--b--
-st.write('Grafik Negara dengan Produksi Terbanyak')
+mid_col.write('Grafik Negara dengan Produksi Terbanyak')
 st.sidebar.header('Pengaturan Negara dengan Data Produksi Terbesar')
 tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
@@ -77,7 +77,7 @@ plt.show()
 st.pyplot(plt)
 
 #--c--
-st.write('Grafik Negara dengan Data Produksi Kumulatif Terbanyak')
+mid_col.write('Grafik Negara dengan Data Produksi Kumulatif Terbanyak')
 list_a = []
 kumulatif = []
 
@@ -111,12 +111,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
         
-st.write('Negara dengan Produksi Terbesar')
-st.write(jumlah_produksi)
-st.write(kode_negara)
-st.write(nama_negara)
-st.write(region_negara)
-st.write(subregion_negara)
+left_col.write('Negara dengan Produksi Terbesar')
+left_col.write(jumlah_produksi)
+left_col.write(kode_negara)
+left_col.write(nama_negara)
+left_col.write(region_negara)
+left_col.write(subregion_negara)
 
 jumlah_produksi = dk[:1].iloc[0]['kumulatif']
 kode_negara = dk[:1].iloc[0]['kode_negara']
@@ -130,12 +130,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
         
-st.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
-st.write(jumlah_produksi)
-st.write(kode_negara)
-st.write(nama_negara)
-st.write(region_negara)
-st.write(subregion_negara)
+left_col.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
+left_col.write(jumlah_produksi)
+left_col.write(kode_negara)
+left_col.write(nama_negara)
+left_col.write(region_negara)
+left_col.write(subregion_negara)
 
 '''
 #bagian 2
