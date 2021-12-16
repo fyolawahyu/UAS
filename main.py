@@ -103,7 +103,7 @@ for i in list_a :
 dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk = dk[:n]
-
+st.write(dk)
 dk.plot.bar(x='kode_negara', y='kumulatif') 
 plt.show()
 st.pyplot(plt)
