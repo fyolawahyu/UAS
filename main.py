@@ -29,6 +29,15 @@ csv_ = ch_.dataFrame
 df_info = jh_.dataFrame
 negara_li = df_info['name'].tolist()
 
+list_kodekumpulannegara = []
+for i in list(csv_['kode_negara']) :
+    if i not in list(df_info['alpha-3']) :
+        list_kodekumpulannegara.append(i)
+
+for i in list_kodekumpulannegara :
+    csv_ = csv_[csv_.kode_negara != i]
+print(csv_)
+
 #MENGATUR LETAK OUTPUT
 st.sidebar.title("Pengaturan")
 st.sidebar.header('Pengaturan Jumlah Produksi Per Bulan')
