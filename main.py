@@ -71,3 +71,4 @@ dfb = dfb[:n]
 
 dfb.plot.bar(x='kode_negara', y='produksi')
 plt.show()
+st.pyplot(dfb)
