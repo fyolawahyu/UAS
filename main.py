@@ -42,6 +42,8 @@ print(csv_)
 st.sidebar.title("Pengaturan")
 st.sidebar.header('Pengaturan Jumlah Produksi Per Bulan')
 left_col, mid_col, right_col = st.columns(3)
+
+#--a--
 negara = st.sidebar.selectbox('Pilih negara : ',negara_li) 
 
 kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
@@ -72,7 +74,6 @@ plt.show()
 st.pyplot(fig)
 
 #--b--
-mid_col.write('Grafik Negara dengan Produksi Terbanyak')
 st.sidebar.header('Pengaturan Negara dengan Data Produksi Terbesar')
 tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
@@ -81,12 +82,11 @@ dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfbaru = dfb[:n]
 
-dfbaru.plot.bar(x='kode_negara', y='produksi')
+dfbaru.plot.bar(x='kode_negara', y='produksi', color='orange', tittle = 'Grafik Negara dengan Produksi Terbanyak')
 plt.show()
 st.pyplot(plt)
 
 #--c--
-mid_col.write('Grafik Negara dengan Data Produksi Kumulatif Terbanyak')
 list_a = []
 kumulatif = []
 
@@ -102,7 +102,7 @@ dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulat
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk = dk[:n]
 
-dk.plot.bar(x='kode_negara', y='kumulatif') 
+dk.plot.bar(x='kode_negara', y='kumulatif', color='orange', tittle = 'Grafik Negara dengan Kumulatif Produksi Terbanyak') 
 plt.show()
 st.pyplot(plt)
 '''
