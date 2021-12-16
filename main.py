@@ -70,7 +70,7 @@ dfb = dfb.sort_values(by='produksi', ascending = False)
 dfb = dfb[:n]
 
 fig, dfb = plt.subplots()
-dfb.plot.bar(x='kode_negara', y='produksi', color=orange)
+dfb.plot.bar(x='kode_negara', y='produksi')
 dfb.set_xlabel("Negara", fontsize=12)
 dfb.set_ylabel("Jumlah Produksi", fontsize=12)
 plt.show()
