@@ -243,7 +243,7 @@ list_regionnegara = []
 list_subregionnegara = []
 for i in range(len(dk)) :
     for j in range(len(df_info)) :
-        if list(dk['kode_negara'])[i] == list(df_info['alpha-3])[j]:
+        if list(dk['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
             list_kodenegara.append(list(df_info['alpha-3'])[j])
             list_regionnegara.append(list(df_info['region'])[j])
             list_subregionnegara.append(list(df_info['sub-region'])[j])
