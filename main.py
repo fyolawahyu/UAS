@@ -102,6 +102,7 @@ for i in list_a :
     
 dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulatif'])
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
+dk2 = dk.sort_values(by=['kumulatif'], ascending = True)
 dk1 = dk[:n]
 
 st.write(dk1)
