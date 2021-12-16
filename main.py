@@ -202,7 +202,7 @@ for i in range(len(dfproduksinol)):
     for j in range(len(df_info)):
         if list (dfproduksinol['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
             listnegaranol.append(list(df_info['name'])[j])
-            listregionalnol.append(list(df_info['region'])[j])
+            listregionol.append(list(df_info['region'])[j])
             listsubregionol.append(list(df_info['sub-region'])[j])
 
 dfproduksinol['negara'] = listnegaranol
