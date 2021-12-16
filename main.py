@@ -82,9 +82,9 @@ dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfbaru = dfb[:n]
 
-dfbaru.plot.bar(x='kode_negara', y='produksi', color='orange', tittle = 'Grafik Negara dengan Produksi Terbanyak')
+dfbaru.plot.bar(x='kode_negara', y='produksi')
 plt.show()
-st.pyplot(plt)
+st.plotly_chart(plt)
 
 #--c--
 list_a = []
@@ -102,9 +102,9 @@ dk = pd.DataFrame(list(zip(list_a,kumulatif)), columns = ['kode_negara','kumulat
 dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk = dk[:n]
 
-dk.plot.bar(x='kode_negara', y='kumulatif', color='orange', tittle = 'Grafik Negara dengan Kumulatif Produksi Terbanyak') 
+dk.plot.bar(x='kode_negara', y='kumulatif') 
 plt.show()
-st.pyplot(plt)
+st.plotly_chart(plt)
 '''
 #--d--
 #bagian 1
