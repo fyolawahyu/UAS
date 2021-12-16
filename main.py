@@ -84,7 +84,17 @@ dfbaru = dfb[:n]
 
 dfbaru.plot.bar(x='kode_negara', y='produksi')
 plt.show()
-st.pyplot(plt)
+
+cmap_name = 'tab20'
+cmap = cm.get_cmap(cmap_name)
+colors = cmap.colors[:len(kode_negara)]
+fig, ax = plt.subplots()
+ax.bar(kode_negara, produksi, color=colors)
+ax.set_xticklabels(kode_negara, rotation=45)
+ax.set_xlabel("Kode Negara", fontsize=12)
+ax.set_ylabel("Total Produksi", fontsize=12)
+ax.tight_layout()
+st.pyplot(ax)
 
 #--c--
 list_a = []
