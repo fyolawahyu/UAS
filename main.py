@@ -81,7 +81,7 @@ list_a = []
 kumulatif = []
 
 for i in list (csv_['kode_negara']) :
-    if i not in list_a.append(i)
+    if i not in list_a:
         list_a.append(i)
         
 for i in list_a :
