@@ -71,4 +71,4 @@ dfb = dfb[:n]
 
 dfb.plot.bar(x='negara', y='produksi')
 plt.show()
-st.pyplot(plt)
+left_col.pyplot(plt)
