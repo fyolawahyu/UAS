@@ -267,3 +267,39 @@ st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
 '''
+#d bagian 3
+dfproduksinol = dfb[dfb.produksi == 0]
+listnegaranol = []
+listregionol = []
+listsubregionol = []
+
+for i in range(len(dfproduksinol)):
+    for j in range(len(df_info)):
+        if list (dfb['kode_negara'])[i] == list(df_info['alpha-3])[j]:
+            listnegaranol.append(list(df_info['name'])[j])
+            listregional.append(list(df_info['region'])[j])
+            listsubregionol.append(list(df_info['sub-region'])[j])
+
+dfproduksinol['negara'] = listnegaranol
+dfproduksinol['region'] = listregional
+dfproduksinol['sub-region'] = listsubregionol
+ 
+                                                        
+dfproduksinolkumulatifnol = dfb[dfb.produksi == 0]
+listnegarakumulatifnol = []
+listregionkumulatifnol = []
+listsubregionkumulatifnol = []
+
+for i in range(len(dfproduksikumulatifnol)):
+    for j in range(len(df_info)):
+        if list (dfb['kode_negara'])[i] == list(df_info['alpha-3])[j]:
+            listnegarankumulatifnol.append(list(df_info['name'])[j])
+            listregionalkumulatifnol.append(list(df_info['region'])[j])
+            listsubregionkumulatifnol.append(list(df_info['sub-region'])[j])
+
+dfproduksikumulatifnol['negara'] = listnegarankumulatifnol
+dfproduksikumulatifnol['region'] = listregional
+dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol     
+                                                        
+st.write(dfproduksinol}
+st.write(dfproduksinol}
