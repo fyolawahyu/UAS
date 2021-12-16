@@ -111,8 +111,9 @@ plt.show()
 st.pyplot(plt)
 
 #--d--
-col1, col2, col3, col4 = st.columns(4)
 c1, c2, c3, c4 = st.columns(4)
+col1, col2, col3, col4 = st.columns(4)
+
 #bagian 1
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
 kode_negara = dfb[:1].iloc[0]['kode_negara']
