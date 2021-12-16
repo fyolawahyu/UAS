@@ -217,7 +217,7 @@ listsubregionkumulatifnol = []
 
 for i in range(len(dfproduksikumulatifnol)):
     for j in range(len(df_info)):
-        if list (dfb['kode_negara'])[i] == list(df_info['alpha-3])[j]:
+        if list (dfproduksikumulatifnolb['kode_negara'])[i] == list(df_info['alpha-3'])[j]:
             listnegarankumulatifnol.append(list(df_info['name'])[j])
             listregionalkumulatifnol.append(list(df_info['region'])[j])
             listsubregionkumulatifnol.append(list(df_info['sub-region'])[j])
