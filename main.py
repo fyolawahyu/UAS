@@ -21,8 +21,8 @@ df = pd.DataFrame(csv)
 print(df)
 
 #MEMBUAT DATA FRAME TIAP FILE
-st.title('Data Produksi Minyak Mentah')
-st.header('UAS Pemrograman Komputer')
+mid_col.title('Data Produksi Minyak Mentah')
+mid_col.header('UAS Pemrograman Komputer')
 ch_ = csv_('produksi_minyak_mentah.csv')
 jh_ = json_('kode_negara_lengkap.json')
 csv_ = ch_.dataFrame
@@ -50,7 +50,7 @@ df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
-st.write(df2)
+mid_col.write(df2)
 
 #OUTPUT GRAFIK A
 fig, ax = plt.subplots()
