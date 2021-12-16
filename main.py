@@ -294,7 +294,7 @@ with right_col5 :
 
 left_col6, right_col6 = st.columns(2)
 
-                                                      '''
+'''                                                   
 #nol
 dataframe_produksinol = dataframe_gabungan[dataframe_gabungan.produksi == 0]
 dataframe_jumlahproduksinol = dataframe_produksinol.loc[dataframe_produksinol['tahun'] == T2]
@@ -307,3 +307,4 @@ dataframe_kumulatifnol = dataframe_terkecilkeseluruhantahun[dataframe_terkecilke
 with right_col6 :
     st.subheader("Data Negara-Negara dengan Jumlah Produksi sama dengan Nol dari Keseluruhan Tahun")
     st.dataframe(dataframe_kumulatifnol)
+'''
