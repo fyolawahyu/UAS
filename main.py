@@ -191,11 +191,6 @@ st.write(kode_negara)
 st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
-
-dfakumulatifmin = dk.sort_values(by='kumulatif', ascending=True)
-dataframe_kumulatiftanpanol = dfakumulatifmin[dfakumulatifmin.kumulatif != 0]
-dataframe_terkecilkeseluruhantahunbaru = dataframe_kumulatiftanpanol[:1]
-st.(dataframe_terkecilkeseluruhantahunbaru)
     
 #d bagian 3
 dfproduksinol = dfb[dfb.produksi == 0]
