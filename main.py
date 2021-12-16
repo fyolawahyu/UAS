@@ -69,6 +69,10 @@ dfb = df.loc[df['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfb = dfb[:n]
 
-dfb.plot.bar(x='kode_negara', y='produksi')
+cmap_name = 'tab20'
+cmap = cm.get_cmap(cmap_name)
+colors = cmap.colors[:len(kode_negara)]
+fig, dfb = plt.subplots()
+dfb.plot.bar(x='kode_negara', y='produksi', color=colors)
 plt.show()
 left_col.pyplot(plt)
