@@ -22,7 +22,7 @@ print(df)
 
 #MEMBUAT DATA FRAME TIAP FILE
 st.title('Data Produksi Minyak Mentah')
-mid_col.header('UAS Pemrograman Komputer')
+st.header('UAS Pemrograman Komputer')
 ch_ = csv_('produksi_minyak_mentah.csv')
 jh_ = json_('kode_negara_lengkap.json')
 csv_ = ch_.dataFrame
