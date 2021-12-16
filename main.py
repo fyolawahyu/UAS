@@ -206,7 +206,7 @@ for i in range(len(dfproduksinol)):
             listsubregionol.append(list(df_info['sub-region'])[j])
 
 dfproduksinol['negara'] = listnegaranol
-dfproduksinol['region'] = listregional
+dfproduksinol['region'] = listregionol
 dfproduksinol['sub-region'] = listsubregionol
  
                                                         
