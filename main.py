@@ -77,7 +77,7 @@ for i in range(len(list(df_csv['kode_negara']))):
         
 #OUTPUT GRAFIK A
 fig, ax = plt.subplots()
-ax.plot(x='list_tahun', y='list_produksi')
+ax.plot(list_tahun, list_produksi)
 ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
 ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
