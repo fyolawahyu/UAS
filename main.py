@@ -171,9 +171,9 @@ st.write(nama_negara)
 st.write(region_negara)
 st.write(subregion_negara)
                                     
-dfakumulatifmin=dk[dk.akumulatif !=0]
+dfakumulatifmin=dk[dk.kumulatif !=0]
 dfakumulatifmin = dfakumulatifmin[:1].sort_values(by=['produksi'], ascending = True)
-jumlah_produksi = dfakumulatifmin[:1].iloc[0]['akumulatif']
+jumlah_produksi = dfakumulatifmin[:1].iloc[0]['kumulatif']
 kode_negara = dfakumulatifmin[:1].iloc[0]['kode_negara']
 nama_negara = ""
 region_negara = ""
