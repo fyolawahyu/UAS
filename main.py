@@ -111,6 +111,7 @@ plt.show()
 st.pyplot(plt)
 
 #--d--
+col1, col2, col3, col4 = st.columns(4)
 #bagian 1
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
 kode_negara = dfb[:1].iloc[0]['kode_negara']
@@ -124,12 +125,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
         
-left_col.write('Negara dengan Produksi Terbesar')
-left_col.write(jumlah_produksi)
-left_col.write(kode_negara)
-left_col.write(nama_negara)
-left_col.write(region_negara)
-left_col.write(subregion_negara)
+col1.write('Negara dengan Produksi Terbesar')
+col1.write(jumlah_produksi)
+col1.write(kode_negara)
+col1.write(nama_negara)
+col1.write(region_negara)
+col1.write(subregion_negara)
 
 jumlah_produksi = dk[:1].iloc[0]['kumulatif']
 kode_negara = dk[:1].iloc[0]['kode_negara']
@@ -143,12 +144,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
         
-left_col.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
-left_col.write(jumlah_produksi)
-left_col.write(kode_negara)
-left_col.write(nama_negara)
-left_col.write(region_negara)
-left_col.write(subregion_negara)
+col2.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
+col2.write(jumlah_produksi)
+col2.write(kode_negara)
+col2.write(nama_negara)
+col2.write(region_negara)
+col2.write(subregion_negara)
 
 
 #bagian 2
@@ -166,12 +167,12 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
                                     
-st.write('Negara dengan Produksi Terkecil')
-st.write(jumlah_produksi)
-st.write(kode_negara)
-st.write(nama_negara)
-st.write(region_negara)
-st.write(subregion_negara)
+col3.write('Negara dengan Produksi Terkecil')
+col3.write(jumlah_produksi)
+col3.write(kode_negara)
+col3.write(nama_negara)
+col3.write(region_negara)
+col3.write(subregion_negara)
 
 dfakumulatifmin=dk2[dk2.kumulatif !=0]
 dfakumulatifmin = dfakumulatifmin[:1].sort_values(by=['kumulatif'], ascending = True)
@@ -188,12 +189,12 @@ for i in range(len(df_info)):
         subregion_negara = list(df_info['sub-region'])[i]
 
 
-st.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
-st.write(jumlah_produksi)
-st.write(kode_negara)
-st.write(nama_negara)
-st.write(region_negara)
-st.write(subregion_negara)
+col4.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
+col4.write(jumlah_produksi)
+col4.write(kode_negara)
+col4.write(nama_negara)
+col4.write(region_negara)
+col4.write(subregion_negara)
  
 
 #d bagian 3
