@@ -31,6 +31,7 @@ negara_li = df_info['name'].tolist()
 
 #MENGATUR LETAK OUTPUT
 st.sidebar.title("Pengaturan")
+st.sidebar.header('Pengaturan Jumlah Produksi Per Bulan')
 left_col, mid_col, right_col = st.columns(3)
 negara = st.sidebar.selectbox('Pilih negara : ',negara_li) 
 
@@ -62,8 +63,10 @@ plt.show()
 st.pyplot(fig)
 
 #--b--
+
+st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
+tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
-tahun = st.sidebar.number_input("Tahun produksi", min_value=1971, max_value=2015)
 
 dfb = df.loc[df['tahun'] == tahun][:n]
 dfb = dfb.sort_values(by='produksi', ascending = False)
