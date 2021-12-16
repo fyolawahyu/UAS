@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm 
 import streamlit as st
-'''from f_handler import csv_,json_'''
+from f_handler import csv_,json_
 
 #READ DATA JSON DAN MEMBUAT DATA FRAME JSON
 with open("kode_negara_lengkap.json", "r") as readFile:
