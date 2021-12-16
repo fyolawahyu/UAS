@@ -84,7 +84,7 @@ dfbaru = dfb[:n]
 
 dfbaru.plot.bar(x='kode_negara', y='produksi')
 plt.show()
-st.plotly_chart(plt)
+st.pyplot(plt)
 
 #--c--
 list_a = []
@@ -104,7 +104,7 @@ dk = dk[:n]
 
 dk.plot.bar(x='kode_negara', y='kumulatif') 
 plt.show()
-st.plotly_chart(plt)
+st.pyplot(plt)
 '''
 #--d--
 #bagian 1
