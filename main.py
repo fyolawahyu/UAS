@@ -229,8 +229,9 @@ for i in range(len(dfproduksikumulatifnol)):
 
 dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
-dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol     
-                                                        
+dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol   
+
+col_1, col_2= st.columns(2)                                                        
 st.write(dfproduksinol)
 st.write(dfproduksikumulatifnol)
 
