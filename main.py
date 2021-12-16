@@ -226,6 +226,6 @@ dfproduksikumulatifnol['negara'] = listnegarankumulatifnol
 dfproduksikumulatifnol['region'] = listregional
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol     
                                                         
-st.write(dfproduksinol}
-st.write(dfproduksinol}
+st.write(dfproduksinol)
+st.write(dfproduksikumulatifnol)
 
