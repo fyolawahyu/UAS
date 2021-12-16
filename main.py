@@ -70,6 +70,7 @@ n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 
 df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['tahun']==tahun]
+df2 = df2.sort_values(by=['produksi'], ascending = False)
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 df2 = df2[:n]
 
