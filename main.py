@@ -63,8 +63,8 @@ plt.show()
 st.pyplot(fig)
 
 #--b--
-
-st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
+st.header.write('Grafik Negara dengan Produksi Terbanyak')
+st.sidebar.header('Pengaturan Negara dengan Data Produksi Terbesar')
 tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
 n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 
@@ -77,6 +77,7 @@ plt.show()
 st.pyplot(plt)
 
 #--c--
+st.header.write('Grafik Negara dengan Data Produksi Kumulatif Terbanyak')
 list_a = []
 kumulatif = []
 
