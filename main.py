@@ -108,6 +108,7 @@ dk.plot.bar(x='kode_negara', y='kumulatif')
 plt.show()
 st.pyplot(plt)
 
+'''
 #--d--
 #bagian 1
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
@@ -240,23 +241,23 @@ st.write(dfproduksikumulatifnol)
 list_kodenegara = []
 list_regionnegara = []
 list_subregionnegara = []
-for i in range(len(dataframe_kumulatifnegara)) :
-    for j in range(len(dataframe_json)) :
-        if list(dataframe_kumulatifnegara['nama_negara'])[i] == list(dataframe_json['name'])[j]:
-            list_kodenegara.append(list(dataframe_json['alpha-3'])[j])
-            list_regionnegara.append(list(dataframe_json['region'])[j])
-            list_subregionnegara.append(list(dataframe_json['sub-region'])[j])
+for i in range(len(dk)) :
+    for j in range(len(df_info)) :
+        if list(dk['kode_negara'])[i] == list(df_info['alpha-3])[j]:
+            list_kodenegara.append(list(df_info['alpha-3'])[j])
+            list_regionnegara.append(list(df_info['region'])[j])
+            list_subregionnegara.append(list(df_info['sub-region'])[j])
 
-dataframe_kumulatifnegaralengkap = pd.DataFrame(list(zip(list_kodenegara, list_namanegara, list_jumlahkumulatif, list_regionnegara, list_subregionnegara)), columns=['kode_negara', 'nama_negara', 'jumlah_kumulatif', 'region', 'sub-region'])
+dk = pd.DataFrame(list(zip(list_kodenegara, list_namanegara, list_jumlahkumulatif, list_regionnegara, list_subregionnegara)), columns=['kode_negara', 'nama_negara', 'jumlah_kumulatif', 'region', 'sub-region'])
 
-T2 = st.selectbox("Tahun", list_tahun)
+T2 = st.selectbox("Tahun", tahun)
 
 left_col4, right_col4 = st.columns(2)
 
 #left column 4
 #terbesar
-dataframe_jumlahproduksiterbesar2 = dataframe_gabungan.loc[dataframe_gabungan['tahun'] == T2]
-dataframe_jumlahproduksiterbesar2 = dataframe_jumlahproduksiterbesar2.sort_values(by='produksi', ascending=False)
+dataframe_jumlahproduksiterbesar2 = dfb.loc[dfb['tahun'] == T2]
+dataframe_jumlahproduksiterbesar2 = dfb.sort_values(by='produksi', ascending=False)
 dataframe_jumlahproduksibaru2 = dataframe_jumlahproduksiterbesar2[:1]
 with left_col4 :
     st.subheader("Data Negara dengan Produksi Terbesar pada Tahun Tersebut")
@@ -264,7 +265,7 @@ with left_col4 :
 
 #right column 4
 #terkecil
-dataframe_produksitanpanol = dataframe_gabungan[dataframe_gabungan.produksi != 0]
+dataframe_produksitanpanol = dfb[dfb.produksi != 0]
 dataframe_jumlahproduksiterkecil = dataframe_produksitanpanol.loc[dataframe_produksitanpanol['tahun'] == T2]
 dataframe_jumlahproduksiterkecil = dataframe_jumlahproduksiterkecil.sort_values(by='produksi', ascending=True)
 dataframe_jumlahproduksiterkecilbaru = dataframe_jumlahproduksiterkecil[:1]
@@ -276,7 +277,7 @@ left_col5, right_col5 = st.columns(2)
 
 #left column 5
 #terbesar keseluruhan tahun
-dataframe_terbesarkeseluruhantahun = dataframe_kumulatifnegaralengkap.sort_values(by='jumlah_kumulatif', ascending=False)
+dataframe_terbesarkeseluruhantahun = dfb.sort_values(by='jumlah_kumulatif', ascending=False)
 dataframe_terbesarkeseluruhantahunbaru = dataframe_terbesarkeseluruhantahun[:1]
 with left_col5 :
     st.subheader("Data Negara dengan Produksi Kumulatif Terbesar dari Keseluruhan Tahun")
@@ -293,6 +294,7 @@ with right_col5 :
 
 left_col6, right_col6 = st.columns(2)
 
+                                                      '''
 #nol
 dataframe_produksinol = dataframe_gabungan[dataframe_gabungan.produksi == 0]
 dataframe_jumlahproduksinol = dataframe_produksinol.loc[dataframe_produksinol['tahun'] == T2]
