@@ -112,6 +112,7 @@ st.pyplot(plt)
 
 #--d--
 col1, col2, col3, col4 = st.columns(4)
+c1, c2, c3, c4 = st.columns(4)
 #bagian 1
 jumlah_produksi = dfb[:1].iloc[0]['produksi']
 kode_negara = dfb[:1].iloc[0]['kode_negara']
@@ -125,7 +126,7 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
         
-col1.write('Negara dengan Produksi Terbesar')
+c1.write('Negara dengan Produksi Terbesar')
 col1.write(jumlah_produksi)
 col1.write(kode_negara)
 col1.write(nama_negara)
@@ -144,7 +145,7 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
         
-col2.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
+c2.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
 col2.write(jumlah_produksi)
 col2.write(kode_negara)
 col2.write(nama_negara)
@@ -167,7 +168,7 @@ for i in range(len(df_info)):
         region_negara = list(df_info['region'])[i]
         subregion_negara = list(df_info['sub-region'])[i]
                                     
-col3.write('Negara dengan Produksi Terkecil')
+c3.write('Negara dengan Produksi Terkecil')
 col3.write(jumlah_produksi)
 col3.write(kode_negara)
 col3.write(nama_negara)
@@ -189,7 +190,7 @@ for i in range(len(df_info)):
         subregion_negara = list(df_info['sub-region'])[i]
 
 
-col4.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
+c4.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
 col4.write(jumlah_produksi)
 col4.write(kode_negara)
 col4.write(nama_negara)
