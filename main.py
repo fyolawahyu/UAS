@@ -87,7 +87,34 @@ ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
 plt.show()
-st.pyplot(fig)        
+st.pyplot(fig)     
+
+#--------------------------b-------------------------------
+st.sidebar.header('Pengaturan Negara dengan Produksi Terbesar')
+tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
+n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
+
+dfb = df_scv.loc[df_scv['tahun'] == tahun]
+dfb = dfb.sort_values(by='produksi', ascending = False)
+df3 = dfb[:n]
+
+list_nama_df2 = []
+
+# Memasukkan nama negara dari df_negara ke list_nama_df2 berdasarkan data
+# dari df2
+for i in range(len(list(dfb['kode_negara']))):
+    for j in range(len(list(df_negara['alpha-3']))):
+        if list(df2['kode_negara'])[i] == list(df_negara['alpha-3'])[j]:
+            list_nama_df2.append(list(df_negara['Negara'])[j])
+
+dfb['negara'] = list_nama_df2
+
+dfb = df2[:n]
+
+dfb.plot.bar(x='kode_negara', y='produksi')
+plt.show()
+st.pyplot(plt)
+
         
 '''
 #MEMBUAT DATA FRAME TIAP FILE
