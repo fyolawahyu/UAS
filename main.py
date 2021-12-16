@@ -58,7 +58,7 @@ ax.set_title("Jumlah Produksi Per Tahun")
 ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
-plt.show(*, block=None)
+plt.show()
 st.pyplot(fig)
 
 #--b--
@@ -70,5 +70,5 @@ dfb = dfb.sort_values(by='produksi', ascending = False)
 dfb = dfb[:n]
 
 dfb.plot.bar(x='kode_negara', y='produksi')
-plt.show(*, block=None)
+plt.show()
 st.pyplot(plt)
