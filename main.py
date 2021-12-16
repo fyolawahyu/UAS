@@ -14,6 +14,10 @@ list_kodenegaraangka = []
 list_region = []
 list_subregion = []
 
+st.title('Data Produksi Minyak Mentah')
+st.header('UAS Pemrograman Komputer')
+left_col, mid_col, right_col = st.columns(3)
+
 #READ DATA JSON
 with open("kode_negara_lengkap.json", "r") as read_file:
     data = json.load(read_file)
@@ -75,13 +79,6 @@ for i in range(len(list(df_csv['kode_negara']))):
         list_produksi.append(list(df_csv['produksi'])[i])
         list_tahun.append(list(df_csv['tahun'])[i])
 
-#OUTPUT TABEL A
-df2 = pd.DataFrame(df_csv,columns= ['kode_negara','tahun','produksi'])
-df2=df2.loc[df2['kode_negara']==kode]
-df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
-
-st.write(df2)
-
 #OUTPUT GRAFIK A
 fig, ax = plt.subplots()
 ax.plot(list_tahun, list_produksi)
@@ -94,8 +91,7 @@ st.pyplot(fig)
         
 '''
 #MEMBUAT DATA FRAME TIAP FILE
-st.title('Data Produksi Minyak Mentah')
-st.header('UAS Pemrograman Komputer')
+
 ch_ = csv_('produksi_minyak_mentah.csv')
 jh_ = json_('kode_negara_lengkap.json')
 csv_ = ch_.dataFrame
