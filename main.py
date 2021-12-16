@@ -13,20 +13,16 @@ with open("kode_negara_lengkap.json", "r") as read_file:
 # for i in data:
 #     print(type(i))
 print(data[0])
-dfJ = pd.DataFrame(data)
+df_info = pd.DataFrame(data)
 
 #READ DATA CSV
 csv = pd.read_csv("produksi_minyak_mentah.csv")
-df = pd.DataFrame(csv)
+csv_ = pd.DataFrame(csv)
 print(df)
 
 #MEMBUAT DATA FRAME TIAP FILE
 st.title('Data Produksi Minyak Mentah')
 st.header('UAS Pemrograman Komputer')
-ch_ = csv_('produksi_minyak_mentah.csv')
-jh_ = json_('kode_negara_lengkap.json')
-csv_ = ch_.dataFrame
-df_info = jh_.dataFrame
 negara_li = df_info['name'].tolist()
 
 list_kodekumpulannegara = []
