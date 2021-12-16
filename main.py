@@ -20,6 +20,7 @@ csv = pd.read_csv("produksi_minyak_mentah.csv")
 df = pd.DataFrame(csv)
 print(df)
 
+'''
 #MEMBUAT DATA FRAME TIAP FILE
 st.title('Data Produksi Minyak Mentah')
 st.header('UAS Pemrograman Komputer')
@@ -60,7 +61,7 @@ ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
 plt.show
 mid_col.pyplot(fig)
-
+'''
 #--b--
 n = st.sidebar.number_input("Berapa besar negara?", min_value=1, max_value=None)
 tahun = st.sidebar.number_input("Tahun produksi", min_value=1971, max_value=2015)
