@@ -65,7 +65,7 @@ st.write(df2)
 
 #OUTPUT GRAFIK A
 fig, ax = plt.subplots()
-ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'], color='red')
+ax.plot(df2['tahun'], df2['produksi'], label = df2['tahun'], color='orange')
 ax.set_title("Jumlah Produksi Per Tahun di Negara Pilihan")
 ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
@@ -88,8 +88,8 @@ plt.show()
 """
 
 dfbaru, ax = plt.subplots()
-ax.bar(kode_negara, produksi, color='red')
-ax.set_xticklabels(kode_negara, rotation=45)
+ax.bar(produksi, kode_negara, color='red')
+ax.set_xticklabels(produksi, rotation=45)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi", fontsize=12)
 ax.tight_layout()
