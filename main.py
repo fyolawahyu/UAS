@@ -84,7 +84,7 @@ n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfbaru = dfb[:n]
-lcoll.write(dfbaru)
+lcol.write(dfbaru)
 
 dfbaru.plot.bar(x='kode_negara', y='produksi')
 plt.show()
