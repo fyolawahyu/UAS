@@ -239,8 +239,9 @@ dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol   
 
-                                                      
+st.write('Data Negara dengan Produksi Nol')                                                     
 st.write(dfproduksinol)
+st.write('Data Negara dengan Produksi Kumulatif Nol')       
 st.write(dfproduksikumulatifnol)
 
 st.write('by : Fyola Wahyu Kanaya Salsabila - 12220031') 
