@@ -88,8 +88,8 @@ right_col.pyplot(fig)
 lcol, rcol = st.columns(2)
 lcol.write('Negara dengan Produksi Terbesar')
 st.sidebar.header('Pengaturan Negara dengan Data Produksi dan Kumulatif Terbesar')
-tahun = st.slider.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
-n = st.slider.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
+tahun = st.slider("Pilih Tahun produksi", min_value=1971, max_value=2015)
+n = st.slider("Pilih Banyak Negara", min_value=1, max_value=None)
 
 dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
