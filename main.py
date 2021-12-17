@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 from matplotlib import cm 
 import streamlit as st
 from file import csv_,json_
+from PIL import Image
+
+image = Image.open('165420.jpg')
+st.sidebar.image(image)
 
 #READ DATA JSON
 with open("kode_negara_lengkap.json", "r") as read_file:
