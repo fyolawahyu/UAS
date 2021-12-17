@@ -21,9 +21,8 @@ df = pd.DataFrame(csv)
 print(df)
 
 #MEMBUAT DATA FRAME TIAP FILE
-st.title('Data Produksi Minyak Mentah')
+st.title('Analisis Data Produksi Minyak Mentah')
 st.header('UAS Pemrograman Komputer')
-st.header('12220031 - Fyola Wahyu Kanaya Salsabila')
 ch_ = csv_('produksi_minyak_mentah.csv')
 jh_ = json_('kode_negara_lengkap.json')
 csv_ = ch_.dataFrame
@@ -240,7 +239,8 @@ dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
 dfproduksikumulatifnol['region'] = listregionkumulatifnol
 dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol   
 
-col_1, col_2= st.columns(2)                                                        
-col_1.write(dfproduksinol)
-col_2.write(dfproduksikumulatifnol)
+                                                      
+st.write(dfproduksinol)
+st.write(dfproduksikumulatifnol)
 
+st.write('by : Fyola Wahyu Kanaya Salsabila - 12220031') 
