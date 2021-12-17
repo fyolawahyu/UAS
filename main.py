@@ -8,6 +8,7 @@ import streamlit as st
 from file import csv_,json_
 from PIL import Image
 
+st.sidebar.write('by : Fyola Wahyu K S - 12220031') 
 image = Image.open('165420.jpg')
 st.sidebar.image(image)
 
