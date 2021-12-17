@@ -1,4 +1,2 @@
 # UAS PEMROGRAMAN KOMPUTER
-Nama : Fyola Wahyu Kanaya Salsabila
-NIM : 12220031
-Kelas : 01
+Nama : Fyola Wahyu Kanaya Salsabila, NIM : 12220031, Kelas : 01
