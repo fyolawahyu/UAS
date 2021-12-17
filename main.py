@@ -43,8 +43,10 @@ st.sidebar.title("Pengaturan")
 st.sidebar.header('Pengaturan Jumlah Produksi Per Bulan')
 
 
-#--a--
+#--a---
+
 left_col, right_col = st.columns(2)
+left_col.("Data Produksi Negara Pilihan")
 negara = st.sidebar.selectbox('Pilih negara : ',negara_li) 
 
 kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
