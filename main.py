@@ -22,7 +22,8 @@ print(df)
 
 #MEMBUAT DATA FRAME TIAP FILE
 st.title('Data Produksi Minyak Mentah')
-st.header('UAS Pemrograman Komputer/fyola')
+st.header('UAS Pemrograman Komputer')
+st.header('12220031 - Fyola Wahyu Kanaya Salsabila')
 ch_ = csv_('produksi_minyak_mentah.csv')
 jh_ = json_('kode_negara_lengkap.json')
 csv_ = ch_.dataFrame
