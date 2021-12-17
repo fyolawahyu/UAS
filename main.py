@@ -55,12 +55,12 @@ st.sidebar.write('Kode negara : ',kode)
 st.sidebar.write('Negara : ',negara)
 
 # MENGUBAH STRING MENJADI FLOAT
-df['produksi'] = df['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
-df['produksi'] = df['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
-df['produksi'] = pd.to_numeric(df['produksi'], errors='coerce')
+csv_['produksi'] = csv_['produksi'].astype(str).str.replace(".", "", regex=True).astype(float)
+csv_['produksi'] =csv_['produksi'].astype(str).str.replace(",", "", regex=True).astype(float)
+csv_['produksi'] = pd.to_numeric(csv_['produksi'], errors='coerce')
 
 #OUTPUT TABEL A
-df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
+df2 = pd.DataFrame(csv_,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
