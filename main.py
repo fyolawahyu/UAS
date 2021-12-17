@@ -41,9 +41,10 @@ print(csv_)
 #MENGATUR LETAK OUTPUT
 st.sidebar.title("Pengaturan")
 st.sidebar.header('Pengaturan Jumlah Produksi Per Bulan')
-left_col, mid_col, right_col = st.columns(3)
+
 
 #--a--
+left_col, right_col = st.columns(2)
 negara = st.sidebar.selectbox('Pilih negara : ',negara_li) 
 
 kode = df_info[df_info['name']==negara]['alpha-3'].tolist()[0]
@@ -61,7 +62,7 @@ df2 = pd.DataFrame(df,columns= ['kode_negara','tahun','produksi'])
 df2=df2.loc[df2['kode_negara']==kode]
 df2['produksi'] = pd.to_numeric(df2['produksi'], errors='coerce')
 
-mid_col.write(df2)
+left_col.write(df2)
 
 #OUTPUT GRAFIK A
 fig, ax = plt.subplots()
@@ -71,9 +72,10 @@ ax.set_xlabel("Tahun", fontsize = 12)
 ax.set_ylabel("Jumlah Produksi", fontsize = 12)
 ax.legend(fontsize = 2)
 plt.show()
-st.pyplot(fig)
+right_col.pyplot(fig)
 
 #--b--
+lcol, rcol = st.columns(2)
 st.write('Grafik Negara dengan Produksi Terbesar')
 st.sidebar.header('Pengaturan Negara dengan Data Produksi Terbesar')
 tahun = st.sidebar.number_input("Pilih Tahun produksi", min_value=1971, max_value=2015)
@@ -82,12 +84,14 @@ n = st.sidebar.number_input("Pilih Banyak Negara", min_value=1, max_value=None)
 dfb = csv_.loc[csv_['tahun'] == tahun]
 dfb = dfb.sort_values(by='produksi', ascending = False)
 dfbaru = dfb[:n]
+lcoll.write(dfbaru)
 
 dfbaru.plot.bar(x='kode_negara', y='produksi')
 plt.show()
-st.pyplot(plt)
+rcol.pyplot(plt)
 
 #--c--
+lc, rc = st.columns(2)
 st.write('Grafik Negara dengan Produksi Kumulatif Terbesar')
 list_a = []
 kumulatif = []
@@ -105,10 +109,10 @@ dk = dk.sort_values(by=['kumulatif'], ascending = False)
 dk2 = dk.sort_values(by=['kumulatif'], ascending = True)
 dk1 = dk[:n]
 
-st.write(dk1)
+lc.write(dk1)
 dk1.plot.bar(x='kode_negara', y='kumulatif') 
 plt.show()
-st.pyplot(plt)
+rc.pyplot(plt)
 
 #--d--
 c1, c2, c3, c4 = st.columns(4)
