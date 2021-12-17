@@ -42,12 +42,12 @@ dfC_2 = csvRead_2.dataFrame
 dfJ_2 = jsonRead_2.dataFrame
 lst_negara = dfJ_2['name'].tolist()
 
-list_kodekumpulannegara = []
+lst_codeNegara = []
 for i in list(dfC_2['kode_negara']) :
     if i not in list(dfJ_2['alpha-3']) :
-        list_kodekumpulannegara.append(i)
+        lst_codeNegara.append(i)
 
-for i in list_kodekumpulannegara :
+for i in lst_codeNegara :
     dfC_2 = dfC_2[dfC_2.kode_negara != i]
 print(dfC_2)
 
@@ -129,14 +129,13 @@ dk1.plot.bar(x='kode_negara', y='kumulatif')
 plt.show()
 rc.pyplot(plt)
 
-
 #--d--
 c1, c2, c3, c4 = st.columns(4)
 col1, col2, col3, col4 = st.columns(4)
 
 #bagian 1
-jumlahProd = dfb[:1].iloc[0]['produksi']
-kodeNegara = dfb[:1].iloc[0]['kode_negara']
+jumlahProduksi = dfb[:1].iloc[0]['produksi']
+kode_negara = dfb[:1].iloc[0]['kode_negara']
 namaNegara = ""
 regionNegara = ""
 subregionNegara = ""
@@ -148,14 +147,14 @@ for i in range(len(dfJ_2)):
         subregionNegara = list(dfJ_2['sub-region'])[i]
         
 c1.write('Negara dengan Produksi Terbesar')
-col1.write(jumlahProd)
-col1.write(kodeNegara)
+col1.write(jumlahProduksi)
+col1.write(kode_negara)
 col1.write(namaNegara)
 col1.write(regionNegara)
 col1.write(subregionNegara)
 
-jumlahProd = dk[:1].iloc[0]['kumulatif']
-kodeNegara = dk[:1].iloc[0]['kode_negara']
+jumlahProduksi = dk[:1].iloc[0]['kumulatif']
+kode_negara = dk[:1].iloc[0]['kode_negara']
 namaNegara = ""
 regionNegara = ""
 subregionNegara = ""
@@ -167,18 +166,18 @@ for i in range(len(dfJ_2)):
         subregionNegara = list(dfJ_2['sub-region'])[i]
         
 c2.write('Negara dengan Produksi Terbesar pada Keseluruhan Tahun')
-col2.write(jumlahProd)
-col2.write(kodeNegara)
+col2.write(jumlahProduksi)
+col2.write(kode_negara)
 col2.write(namaNegara)
 col2.write(regionNegara)
 col2.write(subregionNegara)
 
 
 #bagian 2
-dfD_kecil = dfb[dfb.produksi !=0]
-dfD_kecil = dfD_kecil.sort_values(by=['produksi'],ascending=True)
-jumlahProd = dfD_kecil[:1].iloc[0]['produksi']
-kodeNegara = dfD_kecil[:1].iloc[0]['kode_negara']
+dfterkecil = dfb[dfb.produksi !=0]
+dfterkecil = dfterkecil.sort_values(by=['produksi'],ascending=True)
+jumlahProduksi = dfterkecil[:1].iloc[0]['produksi']
+kode_negara = dfterkecil[:1].iloc[0]['kode_negara']
 namaNegara = ""
 regionNegara = ""
 subregionNegara = ""
@@ -190,16 +189,16 @@ for i in range(len(dfJ_2)):
         subregionNegara = list(dfJ_2['sub-region'])[i]
                                     
 c3.write('Negara dengan Produksi Terkecil')
-col3.write(jumlahProd)
-col3.write(kodeNegara)
+col3.write(jumlahProduksi)
+col3.write(kode_negara)
 col3.write(namaNegara)
 col3.write(regionNegara)
 col3.write(subregionNegara)
 
-dfD_akumulatifkecil=dk2[dk2.kumulatif !=0]
-dfD_akumulatifkecil = dfD_akumulatifkecil[:1].sort_values(by=['kumulatif'], ascending = True)
-jumlahProd = dfD_akumulatifkecil[:1].iloc[0]['kumulatif']
-kodeNegara = dfD_akumulatifkecil[:1].iloc[0]['kode_negara']
+dfakumulatifmin=dk2[dk2.kumulatif !=0]
+dfakumulatifmin = dfakumulatifmin[:1].sort_values(by=['kumulatif'], ascending = True)
+jumlahProduksi = dfakumulatifmin[:1].iloc[0]['kumulatif']
+kode_negara = dfakumulatifmin[:1].iloc[0]['kode_negara']
 namaNegara = ""
 regionNegara = ""
 subregionNegara = ""
@@ -212,48 +211,48 @@ for i in range(len(dfJ_2)):
 
 
 c4.write('Negara dengan Produksi Terkecil Pada Keseluruhan Tahun')
-col4.write(jumlahProd)
-col4.write(kodeNegara)
+col4.write(jumlahProduksi)
+col4.write(kode_negara)
 col4.write(namaNegara)
 col4.write(regionNegara)
 col4.write(subregionNegara)
  
 
 #d bagian 3
-dfD_produksi0 = dfb[dfb.produksi == 0]
-lst_negara0 = []
-lst_regional0 = []
-lst_subregional0 = []
+dfproduksinol = dfb[dfb.produksi == 0]
+listnegaranol = []
+listregionol = []
+listsubregionol = []
 
-for i in range(len(dfD_produksi0)):
+for i in range(len(dfproduksinol)):
     for j in range(len(dfJ_2)):
-        if list (dfD_produksi0['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
-            lst_negara0.append(list(dfJ_2['name'])[j])
-            lst_regional0.append(list(dfJ_2['region'])[j])
-            lst_subregional0.append(list(dfJ_2['sub-region'])[j])
+        if list (dfproduksinol['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
+            listnegaranol.append(list(dfJ_2['name'])[j])
+            listregionol.append(list(dfJ_2['region'])[j])
+            listsubregionol.append(list(dfJ_2['sub-region'])[j])
 
-dfD_produksi0['negara'] = lst_negara0
-dfD_produksi0['region'] = lst_regional0
-dfD_produksi0['sub-region'] = lst_subregional0
+dfproduksinol['negara'] = listnegaranol
+dfproduksinol['region'] = listregionol
+dfproduksinol['sub-region'] = listsubregionol
  
                                                         
-dfD_produksikumulatif0 = dfb[dfb.produksi == 0]
-lst_negarakumulatif0 = []
-lst_regionkumulatif0 = []
-lst_subregionkumulatif0 = []
+dfproduksikumulatifnol = dfb[dfb.produksi == 0]
+listnegarakumulatifnol = []
+listregionkumulatifnol = []
+listsubregionkumulatifnol = []
 
-for i in range(len(dfD_produksikumulatif0)):
+for i in range(len(dfproduksikumulatifnol)):
     for j in range(len(dfJ_2)):
-        if list (dfD_produksikumulatif0['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
-            lst_negarakumulatif0.append(list(dfJ_2['name'])[j])
-            lst_regionkumulatif0.append(list(dfJ_2['region'])[j])
-            lst_subregionkumulatif0.append(list(dfJ_2['sub-region'])[j])
+        if list (dfproduksikumulatifnol['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
+            listnegarakumulatifnol.append(list(dfJ_2['name'])[j])
+            listregionkumulatifnol.append(list(dfJ_2['region'])[j])
+            listsubregionkumulatifnol.append(list(dfJ_2['sub-region'])[j])
 
-dfD_produksikumulatif0['negara'] = lst_negarakumulatif0
-dfD_produksikumulatif0['region'] = lst_regionkumulatif0
-dfD_produksikumulatif0['sub-region'] = lst_subregionkumulatif0   
+dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
+dfproduksikumulatifnol['region'] = listregionkumulatifnol
+dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol   
 
 st.write('Data Negara dengan Produksi Nol')                                                     
-st.write(dfD_produksi0)
+st.write(dfproduksinol)
 st.write('Data Negara dengan Produksi Kumulatif Nol')       
-st.write(dfD_produksikumulatif0)
+st.write(dfproduksikumulatifnol)
