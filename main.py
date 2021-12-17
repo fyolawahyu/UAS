@@ -100,11 +100,11 @@ dfB = dfC_2.loc[dfC_2['tahun'] == tahun]
 dfB = dfB.sort_values(by='produksi', ascending = False)
 dfB_2 = dfB[:n]
 lcol.write(dfB_2)
-
+'''
 dfB_2.plot.bar(x='kode_negara', y='produksi')
 plt.show()
 rcol.pyplot(plt)
-
+'''
 #--c--
 lc, rc = st.columns(2)
 lc.write('Negara dengan Produksi Kumulatif Terbesar')
