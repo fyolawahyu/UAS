@@ -267,5 +267,5 @@ dfproduksikumulatif0['sub-region'] = listsubregionkumulatif0
 
 st.write('Data Negara dengan Produksi nol')                                                     
 st.write(dfproduksi0)
-st.write('Data Negara dengan Produksi Kumulatif nol)       
+st.write('Data Negara dengan Produksi Kumulatif nol')       
 st.write(dfproduksikumulatif0)
