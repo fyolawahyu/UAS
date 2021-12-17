@@ -219,40 +219,40 @@ col4.write(subregionNegara)
  
 
 #d bagian 3
-dfproduksinol = dfb[dfb.produksi == 0]
-listnegaranol = []
-listregionol = []
-listsubregionol = []
+dfproduksi0 = dfb[dfb.produksi == 0]
+listnegara0 = []
+listregio0 = []
+listsubregio0 = []
 
-for i in range(len(dfproduksinol)):
+for i in range(len(dfproduksi0)):
     for j in range(len(dfJ_2)):
-        if list (dfproduksinol['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
-            listnegaranol.append(list(dfJ_2['name'])[j])
-            listregionol.append(list(dfJ_2['region'])[j])
-            listsubregionol.append(list(dfJ_2['sub-region'])[j])
+        if list (dfproduksi0['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
+            listnegara0.append(list(dfJ_2['name'])[j])
+            listregio0.append(list(dfJ_2['region'])[j])
+            listsubregio0.append(list(dfJ_2['sub-region'])[j])
 
-dfproduksinol['negara'] = listnegaranol
-dfproduksinol['region'] = listregionol
-dfproduksinol['sub-region'] = listsubregionol
+dfproduksi0['negara'] = listnegara0
+dfproduksi0['region'] = listregio0
+dfproduksi0['sub-region'] = listsubregio0
  
                                                         
-dfproduksikumulatifnol = dfb[dfb.produksi == 0]
-listnegarakumulatifnol = []
-listregionkumulatifnol = []
-listsubregionkumulatifnol = []
+dfproduksikumulatif0 = dfb[dfb.produksi == 0]
+listnegarakumulatif0 = []
+listregionkumulatif0 = []
+listsubregionkumulatif0 = []
 
-for i in range(len(dfproduksikumulatifnol)):
+for i in range(len(dfproduksikumulatif0)):
     for j in range(len(dfJ_2)):
-        if list (dfproduksikumulatifnol['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
-            listnegarakumulatifnol.append(list(dfJ_2['name'])[j])
-            listregionkumulatifnol.append(list(dfJ_2['region'])[j])
-            listsubregionkumulatifnol.append(list(dfJ_2['sub-region'])[j])
+        if list (dfproduksikumulatif0['kode_negara'])[i] == list(dfJ_2['alpha-3'])[j]:
+            listnegarakumulatif0.append(list(dfJ_2['name'])[j])
+            listregionkumulatif0.append(list(dfJ_2['region'])[j])
+            listsubregionkumulatif0.append(list(dfJ_2['sub-region'])[j])
 
-dfproduksikumulatifnol['negara'] = listnegarakumulatifnol
-dfproduksikumulatifnol['region'] = listregionkumulatifnol
-dfproduksikumulatifnol['sub-region'] = listsubregionkumulatifnol   
+dfproduksikumulatif0['negara'] = listnegarakumulatif0
+dfproduksikumulatif0['region'] = listregionkumulatif0
+dfproduksikumulatif0['sub-region'] = listsubregionkumulatif0   
 
-st.write('Data Negara dengan Produksi Nol')                                                     
-st.write(dfproduksinol)
-st.write('Data Negara dengan Produksi Kumulatif Nol')       
-st.write(dfproduksikumulatifnol)
+st.write('Data Negara dengan Produksi 0')                                                     
+st.write(dfproduksi0)
+st.write('Data Negara dengan Produksi Kumulatif 0')       
+st.write(dfproduksikumulatif0)
